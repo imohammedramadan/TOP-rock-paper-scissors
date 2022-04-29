@@ -1,12 +1,15 @@
+/* css reset */
 html {
-    box-sizing: border-box;
-    font-size: 16px;
+	box-sizing: border-box;
+	font-size: 16px;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+	box-sizing: inherit;
+	color: var(--font-color);
+	font-family: "Roboto", sans-serif;
 }
 
 body,
@@ -19,17 +22,255 @@ h6,
 p,
 ol,
 ul {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
 }
 
 ol,
 ul {
-    list-style: none;
+	list-style: none;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
+/* css reset */
+
+/* custom properties */
+:root {
+	--background: #121212;
+	--header: #053742;
+	--cyan: #39a2db;
+	--font-color: #ffffff;
+}
+/* custom properties */
+
+body {
+	background-color: var(--background);
+}
+
+header {
+	background-color: var(--header);
+}
+
+.btn {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+/* header start */
+.header-container {
+	display: flex;
+	width: 60vw;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	padding: 0.5rem 0;
+}
+.header-title h1 {
+	font-weight: 700;
+	font-size: 28px;
+}
+.btn-rules {
+	font-size: 22px;
+}
+.btn-rules:hover {
+	color: var(--cyan);
+}
+/* header end */
+
+/* main start */
+main {
+	height: calc(100vh - 50px);
+	display: flex;
+}
+/* intro container start */
+.intro-container {
+	width: 60vw;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+	height: calc(100vh - 50px);
+	place-items: center;
+	place-content: center;
+}
+
+/* story text start*/
+.story-text p {
+	text-align: center;
+	margin: 0.5rem 0;
+}
+.story-text-main {
+	font-size: 40px;
+	font-weight: 700;
+}
+.story-text-sub {
+	font-size: 32px;
+}
+/* story text end*/
+
+/* game trigger start */
+.game-trigger {
+	text-align: center;
+}
+.trigger-text {
+	margin: 1rem 0;
+}
+.trigger-text h2 {
+	font-size: 32px;
+}
+.btn-trigger {
+	font-weight: 700;
+	font-size: 28px;
+	background: linear-gradient(265.46deg, #053742 25.18%, #39a2db 168.03%);
+	border-radius: 25px;
+	padding: 0.5rem 4rem;
+}
+.btn-trigger:hover {
+	color: var(--cyan);
+}
+/* game trigger end */
+/* intro container end */
+
+/* game container start */
+.game-container {
+	width: 60vw;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	height: calc(100vh - 50px);
+	place-items: center;
+	place-content: center;
+  font-size: 28px;
+  font-weight: 400;
+}
+/* score container start */
+.score-container {
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	place-content: center;
+	text-align: center;
+}
+.current-score {
+	display: flex;
+	flex-direction: row;
+	/* text-align: center; */
+	column-gap: 2rem;
+}
+.player-score,
+.computer-score {
+	background: linear-gradient(265.46deg, #053742 25.18%, #39a2db 168.03%);
+  width: 14rem;
+  height: 6rem;
+  border-radius: 23px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.player-score p,
+.computer-score p {
+  font-weight: 700;
+}
+
+.chosen-units {
+  width: 23rem;
+	display: flex;
+  align-items: center;
+	flex-direction: row;
+  justify-content: space-between;
+}
+.player-unit,
+.computer-unit{
+  background: linear-gradient(265.46deg, #053742 25.18%, #39a2db 168.03%);
+  padding: 10px;
+  border-radius: 0px 0px 16px 16px;
+  height: 104px;
+}
+/* score container end */
+
+/* game container end */
+/* main end */
+
+/* animations start */
+@keyframes fade-in {
+	0% {
+		opacity: 0%;
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+@keyframes fade-out {
+	0% {
+		opacity: 100%;
+	}
+	100% {
+		opacity: 0%;
+	}
+}
+.fade-in {
+	animation-name: fade-in;
+	animation-duration: 500ms;
+	animation-fill-mode: forwards;
+}
+.fade-out {
+	animation-name: fade-out;
+	animation-duration: 500ms;
+	animation-fill-mode: forwards;
+}
+.hide {
+	display: none;
+}
+.visual-hide{
+  opacity: 0;
+}
+/* animations end */
+/* unit image toggles start*/
+.tank{
+  background-image: url(./assets/Tank.png);
+  background-repeat: no-repeat;
+  width: 84px;
+  height: 84px;
+  background-size: 84px;
+}
+.plane{
+  background-image: url(./assets/Plane.png);
+  background-repeat: no-repeat;
+  width: 84px;
+  height: 84px;
+  background-size: 84px;
+}
+.antiair{
+  background-image: url(./assets/Anti-Air.png);
+  background-repeat: no-repeat;
+  width: 84px;
+  height: 84px;
+  background-size: 84px;
+}
+.battle-win{
+  background-image: url(./assets/Sword-Win.png);
+  background-repeat: no-repeat;
+  width: 84px;
+  height: 84px;
+  background-size: 84px;
+}
+.battle-lose{
+  background-image: url(./assets/Sword-Lose.png);
+  background-repeat: no-repeat;
+  width: 84px;
+  height: 84px;
+  background-size: 84px;
+}
+.battle-draw{
+  background-image: url(./assets/Sword-Draw.png);
+  background-repeat: no-repeat;
+  width: 84px;
+  height: 84px;
+  background-size: 84px;
+}
+/* unit image toggles end*/

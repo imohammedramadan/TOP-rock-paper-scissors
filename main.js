@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+"use strict";
+// game logic start
 let playerScore = 0;
 let computerScore = 0;
 
@@ -9,7 +12,9 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
 	computerSelection = getComputerChoice().toLowerCase();
 	playerSelection = playerSelection.toLowerCase();
-    
+
+	// console.log(computerSelection);
+
 	if (playerSelection === computerSelection) {
 		return "Draw!";
 	} else if (
@@ -38,21 +43,42 @@ function getWinner() {
 }
 
 function playGame() {
-    let roundCount = 1
-    const maxScore = 2;
-	for (let i = 0; i < roundCount; i++) {
-		if (playerScore < maxScore && computerScore < maxScore) {
-			playerSelection = prompt("Choose a unit: Tank , plane or anti-air");
-			const computerSelection = getComputerChoice();
-			console.log(playRound(playerSelection, computerSelection));
-			roundCount++;
-			console.log("Player score = " + playerScore);
-			console.log("Computer score = " + computerScore);
-		} else {
-			roundCount = 1;
-		}
+	while (playerScore < 5 && computerScore < 5) {
+		const playerSelection = prompt("Choose a unit: Tank , plane or anti-air");
+		// const playerSelection = "Tank"; //for quick testing purposes
+		console.log(playRound(playerSelection, getComputerChoice()));
+		console.log("Player score = " + playerScore);
+		console.log("Computer score = " + computerScore);
 	}
 	return getWinner();
 }
+// playGame();
 
-alert(playGame());
+// game logic end
+
+// DOM start
+function crossFadeAnim() {
+	const animTrigger = document.querySelector(".btn-trigger");
+	animTrigger.addEventListener("click", crossFade);
+	function crossFade() {
+		const introContainer = document.querySelector(".intro-container");
+		const gameContainer = document.querySelector(".game-container");
+		introContainer.classList.add("fade-out");
+		setTimeout(() => {
+			introContainer.classList.toggle("hide");
+		}, 500);
+		setTimeout(() => {
+			gameContainer.classList.toggle("hide");
+		}, 500);
+		gameContainer.classList.add("fade-in");
+	}
+}
+crossFadeAnim();
+function test() {
+  const tankList = document.querySelector(".choices-container .tank")
+  tankList.addEventListener("click", () => {
+    alert("tank");
+  })
+}
+test()
+// DOM end

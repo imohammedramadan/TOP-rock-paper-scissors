@@ -144,8 +144,8 @@ main {
 	height: calc(100vh - 50px);
 	place-items: center;
 	place-content: center;
-  font-size: 28px;
-  font-weight: 400;
+	font-size: 28px;
+	font-weight: 400;
 }
 /* score container start */
 .score-container {
@@ -164,35 +164,109 @@ main {
 .player-score,
 .computer-score {
 	background: linear-gradient(265.46deg, #053742 25.18%, #39a2db 168.03%);
-  width: 14rem;
-  height: 6rem;
-  border-radius: 23px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  row-gap: 5px;
+	width: 14rem;
+	height: 6rem;
+	border-radius: 23px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	row-gap: 5px;
 }
 .player-score p,
 .computer-score p {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 .chosen-units {
-  width: 23rem;
+	width: 23rem;
 	display: flex;
-  align-items: center;
+	align-items: center;
 	flex-direction: row;
-  justify-content: space-between;
+	justify-content: space-between;
 }
-.player-unit,
-.computer-unit{
-  background: linear-gradient(265.46deg, #053742 25.18%, #39a2db 168.03%);
-  padding: 10px;
-  border-radius: 0px 0px 16px 16px;
-  height: 104px;
+.player-unit img,
+.computer-unit img {
+	background: linear-gradient(265.46deg, #053742 25.18%, #39a2db 168.03%);
+	padding: 10px;
+	border-radius: 0px 0px 16px 16px;
+	height: 104px;
+	width: 104px;
 }
 /* score container end */
-
+/* player choices start */
+.player-choices {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 100px;
+}
+.choices-title {
+	border: 3px solid var(--cyan);
+	border-bottom: 0;
+	border-radius: 16px 16px 0 0;
+	padding: 0.5rem 1rem;
+}
+.choices-container {
+	display: flex;
+	column-gap: 5rem;
+	border: 3px solid var(--cyan);
+	border-radius: 16px;
+	padding: 1.5rem 2rem;
+}
+.choices-container button{
+  background-color: none;
+  background: none;
+  border: none;
+}
+.choices-container button:hover{
+  cursor: pointer;
+  background-color: #053742;
+}
+.choices-container button img {
+	border: 4px solid var(--cyan);
+	border-radius: 10px;
+	padding: 4px;
+	width: 94px;
+	height: 94px;
+}
+/* player choices end */
+/* war status start */
+.war-status {
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	margin-top: 100px;
+}
+.war-title {
+	border: 3px solid var(--cyan);
+	border-bottom: 0;
+	border-radius: 16px 16px 0 0;
+	padding: 0.5rem 1rem;
+	text-align: center;
+	width: fit-content;
+}
+.war-text {
+	display: flex;
+	column-gap: 5rem;
+	border: 3px solid var(--cyan);
+	border-radius: 16px;
+	padding: 1.5rem 2rem;
+	text-align: center;
+}
+.reset-game-btn{
+  margin-top: 20px;
+}
+.reset-game-btn button{
+  font-weight: 700;
+	font-size: 28px;
+	background: linear-gradient(265.46deg, #053742 25.18%, #39a2db 168.03%);
+	border-radius: 25px;
+	padding: 0.5rem 4rem;
+}
+.reset-game-btn button:hover{
+  color: var(--cyan);
+}
+/* war status end */
 /* game container end */
 /* main end */
 
@@ -226,51 +300,7 @@ main {
 .hide {
 	display: none;
 }
-.visual-hide{
-  opacity: 0;
+.visual-hide {
+	opacity: 0;
 }
 /* animations end */
-/* unit image toggles start*/
-.tank{
-  background-image: url(./assets/Tank.png);
-  background-repeat: no-repeat;
-  width: 84px;
-  height: 84px;
-  background-size: 84px;
-}
-.plane{
-  background-image: url(./assets/Plane.png);
-  background-repeat: no-repeat;
-  width: 84px;
-  height: 84px;
-  background-size: 84px;
-}
-.antiair{
-  background-image: url(./assets/Anti-Air.png);
-  background-repeat: no-repeat;
-  width: 84px;
-  height: 84px;
-  background-size: 84px;
-}
-.battle-win{
-  background-image: url(./assets/Sword-Win.png);
-  background-repeat: no-repeat;
-  width: 84px;
-  height: 84px;
-  background-size: 84px;
-}
-.battle-lose{
-  background-image: url(./assets/Sword-Lose.png);
-  background-repeat: no-repeat;
-  width: 84px;
-  height: 84px;
-  background-size: 84px;
-}
-.battle-draw{
-  background-image: url(./assets/Sword-Draw.png);
-  background-repeat: no-repeat;
-  width: 84px;
-  height: 84px;
-  background-size: 84px;
-}
-/* unit image toggles end*/

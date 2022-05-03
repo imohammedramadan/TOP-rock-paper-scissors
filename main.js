@@ -1,16 +1,24 @@
 /*jshint esversion: 6 */
 "use strict";
 
+// player buttons and choices
+const playerChoices = document.querySelector(".player-choices");
 const playerButton = document.querySelectorAll(".player-button");
+
+// player and computer score
 const playerScoreDisplay = document.querySelector(".player-score p");
 const computerScoreDisplay = document.querySelector(".computer-score p");
-const playerChoices = document.querySelector(".player-choices");
+
+// end of game text
 const warStatus = document.querySelector(".war-status");
 const warCondition = document.querySelector(".war-condition");
 const warWin = document.querySelector(".war-win");
 const warLose = document.querySelector(".war-lose");
+
+// start a new game
 const nextGameButton = document.querySelector(".reset-game-btn");
 
+// fading from intro screen to game screen
 function crossFadeAnim() {
 	const animTrigger = document.querySelector(".btn-trigger");
 	animTrigger.addEventListener("click", crossFade);
@@ -29,9 +37,11 @@ function crossFadeAnim() {
 }
 crossFadeAnim();
 
+// initialize player and computer score to 0
 let playerScore = 0;
 let computerScore = 0;
 
+// random selection of a unit for the computer
 function getComputerChoice() {
 	const armyUnits = ["tank", "plane", "antiair"];
 	return armyUnits[Math.floor(Math.random() * armyUnits.length)];
@@ -88,8 +98,8 @@ function playGame() {
 			roundStatus.classList.remove("hide");
 
 			// score update
-			playerScoreDisplay.innerHTML = `${playerScore}`;
-			computerScoreDisplay.innerHTML = `${computerScore}`;
+			playerScoreDisplay.textContent = `${playerScore}`;
+			computerScoreDisplay.textContent = `${computerScore}`;
 
 			// limit game to first to 5 and show win or lose text
 			if (playerScore === 5 || computerScore === 5) {
@@ -102,13 +112,14 @@ function playGame() {
 					warCondition.textContent = "lost";
 					warLose.classList.toggle("hide");
 				}
-				newGame();
+				newGame(playerUnit, computerUnit, roundStatus);
 			}
 		});
 	});
 }
+playGame();
 
-// hide chosen units from the old round
+// hide chosen unit images from an old round
 function roundReset() {
 	function hidePlayerUnits() {
 		const playerUnitChildren = document.querySelector(".player-unit").children;
@@ -139,7 +150,7 @@ function roundReset() {
 }
 
 // reset values and dom then start a new game
-function newGame() {
+function newGame(playerUnit, computerUnit, roundStatus) {
 	playerScore = 0;
 	computerScore = 0;
 	nextGameButton.addEventListener("click", () => {
@@ -149,6 +160,25 @@ function newGame() {
 		playerChoices.classList.remove("hide");
 		warWin.classList.add("hide");
 		warLose.classList.add("hide");
+		computerUnit.classList.add("hide");
+		playerUnit.classList.add("hide");
+		roundStatus.classList.add("hide");
 	});
 }
-playGame();
+
+// rules modal
+const rulesModal = document.querySelector(".rules-modal");
+const openModalBtn = document.querySelector(".btn-rules");
+const closeModalBtn = document.querySelector(".btn-close-modal");
+const rulesModalBackdrop = document.querySelector(".rules-modal::backdrop");
+
+function modalOperation() {
+	openModalBtn.addEventListener("click", () => {
+		rulesModal.showModal();
+	});
+	closeModalBtn.addEventListener("click", () => {
+		rulesModal.close();
+	});
+}
+
+modalOperation();

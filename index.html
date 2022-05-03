@@ -1,207 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- stylesheet -->
-		<link rel="stylesheet" href="./style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- Roboto font import -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-			rel="stylesheet"
-		/>
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
 
-		<title>War Commander</title>
-	</head>
+  <!-- Roboto font import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet" />
 
-	<body>
-		<!-- header start -->
-		<header>
-			<div class="header-container">
-				<div class="header-title">
-					<h1>War Commander</h1>
-				</div>
-				<div class="btn-rules-container">
-					<button class="btn btn-rules">Rules</button>
-				</div>
-			</div>
-		</header>
-		<!-- header end -->
+  <title>War Commander</title>
+</head>
 
-		<!-- main start -->
-		<main>
-			<!-- intro container start -->
-			<div class="intro-container">
-				<div class="story-text">
-					<p class="story-text-main">
-						It is April 20th the year 2069 and the war has begun.
-					</p>
-					<p class="story-text-sub">
-						You need to commandeer your forces and beat the invaders for peace.
-					</p>
-				</div>
-				<!-- <div class="img"></div> -->
-				<div class="game-trigger">
-					<div class="trigger-text">
-						<h2>Are you ready, Commander?</h2>
-					</div>
-					<div class="btn-trigger-container">
-						<button class="btn btn-trigger">To War!</button>
-					</div>
-				</div>
-			</div>
-			<!-- intro container end -->
-			<div class="game-container hide">
-				<div class="score-container">
-					<div class="score-title">
-						<h2>Score</h2>
-					</div>
-					<div class="current-score">
-						<div class="player-score">
-							<h3>Allies</h3>
-							<p>0</p>
-						</div>
-						<div class="computer-score">
-							<h3>Enemies</h3>
-							<p>0</p>
-						</div>
-					</div>
-					<div class="chosen-units">
-						<div class="player-unit">
-							<div class="antiair hide">
-								<img
-									src="./assets/Anti-Air.png"
-									alt=""
-									width="84px"
-									height="84px"
-								/>
-							</div>
-							<div class="tank hide">
-								<img
-									src="./assets/Tank.png"
-									alt=""
-									width="84px"
-									height="84px"
-								/>
-							</div>
-							<div class="plane hide">
-								<img
-									src="./assets/Plane.png"
-									alt=""
-									width="84px"
-									height="84px"
-								/>
-							</div>
-						</div>
-						<div class="round-status">
-							<div class="round-win hide">
-								<img
-									src="./assets/Sword-Win.png"
-									alt=""
-									width="84px"
-									height="84px"
-								/>
-							</div>
-							<div class="round-lose hide">
-								<img
-									src="./assets/Sword-Lose.png"
-									alt=""
-									width="84px"
-									height="84px"
-								/>
-							</div>
-							<div class="round-draw hide">
-								<img
-									src="./assets/Sword-Draw.png"
-									alt=""
-									width="84px"
-									height="84px"
-								/>
-							</div>
-						</div>
-						<div class="computer-unit">
-							<div class="antiair hide">
-								<img
-									src="./assets/Anti-Air.png"
-									alt=""
-									width="84px"
-									height="84px"
-								/>
-							</div>
-							<div class="tank hide">
-								<img
-									src="./assets/Tank.png"
-									alt=""
-									width="84px"
-									height="84px"
-								/>
-							</div>
-							<div class="plane hide">
-								<img
-									src="./assets/Plane.png"
-									alt=""
-									width="84px"
-									height="84px"
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="player-choices">
-					<div class="choices-title">
-						<h4>Choose your Unit</h4>
-					</div>
-					<div class="choices-container">
-						<button class="player-button" id="antiair">
-							<img
-								src="./assets/Anti-Air.png"
-								alt="Anti Air"
-								width="84px"
-								height="84px"
-							/>
-						</button>
-						<button class="player-button" id="tank">
-							<img
-								src="./assets/Tank.png"
-								alt="Tank"
-								width="84px"
-								height="84px"
-							/>
-						</button>
-						<button class="player-button" id="plane">
-							<img
-								src="./assets/Plane.png"
-								alt="Plane"
-								width="84px"
-								height="84px"
-							/>
-						</button>
-					</div>
-				</div>
-				<div class="war-status hide">
-					<div class="war-title">
-						<h4>You <span class="war-condition"></span> the war!</h4>
-					</div>
-					<div class="war-text">
-						<p class="war-win hide">
-							Enjoy the peace but remember, peace never lasts.
-						</p>
-						<p class="war-lose hide">
-							You lost the war, rebuild your army and reclaim your land!
-						</p>
-					</div>
-          <div class="reset-game-btn">
-            <button class="btn">To the next war!</button>
+<body>
+  <!-- header start -->
+  <header>
+    <div class="header-container">
+      <div class="header-title">
+        <h1>War Commander</h1>
+      </div>
+      <div class="btn-rules-container">
+        <button class="btn btn-rules">Rules</button>
+
+        <dialog class="rules-modal">
+          <div class="modal-header">
+            <h2>Rules</h2>
+            <button class="btn btn-close-modal">&times;</button>
           </div>
-				</div>
-			</div>
-		</main>
-		<!-- main end -->
-		<script src="./main.js"></script>
-	</body>
+          <div class="rules-content">
+            <div class="rules-start">
+              <p>Rules are simple</p>
+            </div>
+            <div class="rules-description">
+              <div class="tank-rules">
+                <p><span>Tank</span> beats Anti-Air</p>
+                <img src="./assets/Tank.png" alt="tank" width="84px" height="84px">
+              </div>
+              <div class="plane-rules">
+                <p><span>Plane</span> Beats Tank</p>
+                <img src="./assets/Plane.png" alt="plane" width="84px" height="84px">
+              </div>
+              <div class="antiair-rules">
+                <p><span>Anti-Air</span> beats Plane</p>
+                <img src="./assets/Anti-Air.png" alt="antiair" width="84px" height="84px">
+              </div>
+            </div>
+            <div class="rules-end">
+              <p>good luck and have fun!</p>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </div>
+  </header>
+  <!-- header end -->
+
+  <!-- main start -->
+  <main>
+    <!-- intro container start -->
+    <div class="intro-container">
+      <div class="story-text">
+        <p class="story-text-main">
+          It is April 20th the year 2069 and the war has begun.
+        </p>
+        <p class="story-text-sub">
+          You need to commandeer your forces and beat the invaders for peace.
+        </p>
+      </div>
+      <!-- <div class="img"></div> -->
+      <div class="game-trigger">
+        <div class="trigger-text">
+          <h2>Are you ready, Commander?</h2>
+        </div>
+        <div class="btn-trigger-container">
+          <button class="btn btn-trigger">To War!</button>
+        </div>
+      </div>
+    </div>
+    <!-- intro container end -->
+    <div class="game-container hide">
+      <div class="score-container">
+        <div class="score-title">
+          <h2>Score</h2>
+        </div>
+        <div class="current-score">
+          <div class="player-score">
+            <h3>Allies</h3>
+            <p>0</p>
+          </div>
+          <div class="computer-score">
+            <h3>Enemies</h3>
+            <p>0</p>
+          </div>
+        </div>
+        <div class="chosen-units">
+          <div class="player-unit">
+            <div class="antiair hide">
+              <img src="./assets/Anti-Air.png" alt="" width="84px" height="84px" />
+            </div>
+            <div class="tank hide">
+              <img src="./assets/Tank.png" alt="" width="84px" height="84px" />
+            </div>
+            <div class="plane hide">
+              <img src="./assets/Plane.png" alt="" width="84px" height="84px" />
+            </div>
+          </div>
+          <div class="round-status">
+            <div class="round-win hide">
+              <img src="./assets/Sword-Win.png" alt="" width="84px" height="84px" />
+            </div>
+            <div class="round-lose hide">
+              <img src="./assets/Sword-Lose.png" alt="" width="84px" height="84px" />
+            </div>
+            <div class="round-draw hide">
+              <img src="./assets/Sword-Draw.png" alt="" width="84px" height="84px" />
+            </div>
+          </div>
+          <div class="computer-unit">
+            <div class="antiair hide">
+              <img src="./assets/Anti-Air.png" alt="" width="84px" height="84px" />
+            </div>
+            <div class="tank hide">
+              <img src="./assets/Tank.png" alt="" width="84px" height="84px" />
+            </div>
+            <div class="plane hide">
+              <img src="./assets/Plane.png" alt="" width="84px" height="84px" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="player-choices">
+        <div class="choices-title">
+          <h4>Choose your Unit</h4>
+        </div>
+        <div class="choices-container">
+          <button class="player-button" id="antiair">
+            <img src="./assets/Anti-Air.png" alt="Anti Air" width="84px" height="84px" />
+          </button>
+          <button class="player-button" id="tank">
+            <img src="./assets/Tank.png" alt="Tank" width="84px" height="84px" />
+          </button>
+          <button class="player-button" id="plane">
+            <img src="./assets/Plane.png" alt="Plane" width="84px" height="84px" />
+          </button>
+        </div>
+      </div>
+      <div class="war-status hide">
+        <div class="war-title">
+          <h4>You <span class="war-condition"></span> the war!</h4>
+        </div>
+        <div class="war-text">
+          <p class="war-win hide">
+            Enjoy the peace but remember, peace never lasts.
+          </p>
+          <p class="war-lose hide">
+            You lost the war, rebuild your army and reclaim your land!
+          </p>
+        </div>
+        <div class="reset-game-btn">
+          <button class="btn">To the next war!</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- main end -->
+  <script src="./main.js"></script>
+</body>
+
 </html>

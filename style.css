@@ -134,7 +134,7 @@ header {
 
 /* main start */
 main {
-	height: calc(100vh - 50px);
+	height: calc(100vh - (50px + 40px));
 	display: flex;
 }
 /* intro container start */
@@ -243,6 +243,10 @@ main {
 	height: 104px;
 	width: 104px;
 }
+
+.computer-unit img{
+  transform: scaleX(-1);
+}
 /* score container end */
 /* player choices start */
 .player-choices {
@@ -320,7 +324,23 @@ main {
 /* war status end */
 /* game container end */
 /* main end */
+/* footer */
+footer {
+	background-color: var(--header);
+	padding: 10.5px;
+	text-align: center;
+}
 
+footer a {
+	text-decoration: none;
+	color: var(--font-color);
+	cursor: pointer;
+	transition: all 0.1s ease-in-out;
+}
+footer a:hover {
+	color: var(--cyan);
+}
+/* footer */
 /* animations start */
 @keyframes fade-in {
 	0% {
